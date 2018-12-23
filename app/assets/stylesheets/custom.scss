@@ -23,7 +23,7 @@ $lite-grey : #EAEAEA;
 }
 
 .body-resume{
-    width: 450px;
+    width: 100%;
     margin: auto;
     padding: 10px;
     border: 3px solid;
@@ -38,6 +38,7 @@ $lite-grey : #EAEAEA;
 
 .label{
     color: black;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
     padding-bottom: 10px;
@@ -55,14 +56,4 @@ $lite-grey : #EAEAEA;
     padding: 10px 0;
     border-bottom: 1px solid gray;
   }
-}
-
-@media only screen and (max-width: 600px) {
-    .body-resume{
-        width: 100%;
-    }
-    
-    .label{
-        font-size: 30px;
-    }
 }
