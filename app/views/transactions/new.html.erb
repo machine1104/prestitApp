@@ -7,8 +7,8 @@
     <%= form_for(@transaction) do |f| %>
       <%= f.text_field :description, class: "form-control mr-sm-2", placeholder:"Descrizione" %>
       <%= f.text_field :amount, class: "form-control mr-sm-2", placeholder:"Ammontare" %>
-      <% User.all.each do |user| %>
-        <%=user.name %> <%= f.radio_button :user_id, user.id%><br>
+       <% User.all.each do |user| %>
+        <%=user.name %> <%= f.radio_button :user_id, user.id %><br>
       <% end %>
       <%= f.submit "Crea", class: "btn btn-outline-success my-2 my-sm-0", data: { confirm: "Confermi?" } %>
       
