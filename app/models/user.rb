@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    #has_many :transactions
+    has_many :transactions
     after_initialize :init
     
     validates :name, presence: true, uniqueness: true
