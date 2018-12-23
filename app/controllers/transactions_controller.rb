@@ -5,7 +5,7 @@ class TransactionsController < ApplicationController
     end
     
     def index
-        @transactions = Transaction.paginate(page: params[:page], per_page: 15)
+        @transactions = Transaction.paginate(page: params[:page], per_page: 15).reorder("created_at DESC")
     end
     
     def create
