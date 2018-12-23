@@ -7,10 +7,9 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)    # Not the final implementation!
         if @user.save
-            redirect_to root_path
-            flash[:success] = "Utente creato"
+            redirect_to 
         else
-            flash[:danger] = "Errore"
+            flash.now[:danger] = "Errore"
             render 'new'
         end
     end
