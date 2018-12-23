@@ -31,6 +31,12 @@ $lite-grey : #EAEAEA;
     border-color: $lite-grey;
     
 }
+.body-transaction{
+    width: 100%;
+    margin: auto;
+    border: 3px solid;
+    border-color: $lite-grey;
+}
 
 .grey-bg{
     background: $lite-grey;
@@ -70,3 +76,9 @@ $lite-grey : #EAEAEA;
   }
 }
 
+hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    padding: 0;
+}

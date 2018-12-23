@@ -5,6 +5,7 @@ class TransactionsController < ApplicationController
     end
     
     def index
+        @transactions = Transaction.paginate(page: params[:page], per_page: 15)
     end
     
     def create
@@ -15,6 +16,12 @@ class TransactionsController < ApplicationController
             flash.now[:danger] = "Errore"
             render 'new'
         end
+    end
+    
+    def destroy
+        Transaction.find(params[:id]).destroy
+        flash[:success] = 'Transazione eliminata'
+        redirect_to root_path
     end
     
     
