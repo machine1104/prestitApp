@@ -23,18 +23,18 @@ $lite-grey : #EAEAEA;
 }
 
 .body-resume{
-    width: 70%;
+    width: 450px;
     margin: auto;
     padding: 10px;
     border: 3px solid;
     border-color: $lite-grey;
     
 }
+
 .grey-bg{
     background: $lite-grey;
     
 }
-
 
 .label{
     color: black;
@@ -47,8 +47,6 @@ $lite-grey : #EAEAEA;
     text-align: center;
 }
 
-/* Users index */
-
 .users {
   list-style: none;
   margin: 0;
@@ -57,4 +55,14 @@ $lite-grey : #EAEAEA;
     padding: 10px 0;
     border-bottom: 1px solid gray;
   }
+}
+
+@media only screen and (max-width: 600px) {
+    .body-resume{
+        width: 100%;
+    }
+    
+    .label{
+        font-size: 30px;
+    }
 }
