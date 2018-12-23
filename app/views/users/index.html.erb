@@ -1,0 +1,7 @@
+<ul>
+    <% User.all.each do |user| %>
+        <li>
+            <%= user.name %>: <%= user.total %> €
+        </li>
+    <% end %>
+</ul>

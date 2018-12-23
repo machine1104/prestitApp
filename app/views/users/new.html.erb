@@ -1,0 +1,12 @@
+<div class="body-resume grey-bg center">
+    <div class="label">
+        Crea nuovo utente
+    </div>
+    
+    <div class="my-2 my-lg-0">
+    <%= form_for(@user) do |f| %>
+      <%= f.text_field :name, class: "form-control mr-sm-2", placeholder:"Nome" %>
+      <%= f.submit "Crea", class: "btn btn-outline-success my-2 my-sm-0", data: { confirm: "Confermi?" } %>
+    <% end %>
+  </div>
+</div>
