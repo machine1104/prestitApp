@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)    # Not the final implementation!
         if @user.save
-            redirect_to 
+            redirect_to root_path
         else
             flash.now[:danger] = "Errore"
             render 'new'

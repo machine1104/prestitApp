@@ -4,14 +4,14 @@
     </div>
     <ul>
         <% User.all.each do |user| %>
-            <li>
+            <div class="li-element">
                 <%= user.name %>: <%= user.total %> €
-            </li>
+            </div>
         <% end %>
     </ul>
 </div>
 
 <div class="body-resume center">
-    <%= link_to "Nuova Transazione", new_transaction_path , class:"btn btn-outline-primary my-2 my-sm-0" %>
-    <%= link_to "Nuovo Utente", new_user_path , class:"btn btn-outline-success my-2 my-sm-0" %>
+    <%= link_to "Nuova Transazione", new_transaction_path , class:"button-text btn-block btn btn-outline-primary my-2 my-sm-0" %>
+    <%= link_to "Nuovo Utente", new_user_path , class:"button-text btn-block btn btn-outline-success my-2 my-sm-0" %>
 </div>
