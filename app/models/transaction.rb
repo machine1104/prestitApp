@@ -18,10 +18,8 @@ class Transaction < ApplicationRecord
         user = User.find(self.user_id)
         user.total = '%.2f' % (user.total + self.amount)
         user.save
-        
-        @API = "629726812:AAHC5UyTBd6sd2rLE5qYF_FsAOSUS_Fwc7s"
-        @CHANNEL = "-1001003952543"
-        @LINK = "https://api.telegram.org/bot"+@API+"/sendMessage?chat_id="+@CHANNEL+"&text="
+
+        @LINK = "https://api.telegram.org/bot"+ENV["TELEGRAM_BOT_API"]+"/sendMessage?chat_id="+ENV["CHANNEL"]+"&text="
         
         m = "#Totale "+ User.sum(:total).to_s
         m += "\n"
@@ -40,9 +38,7 @@ class Transaction < ApplicationRecord
         user.total = '%.2f' % (user.total - self.amount)
         user.save
         
-        @API = ENV["TELEGRAM_BOT_API"]
-        @CHANNEL = "-1001003952543"
-        @LINK = "https://api.telegram.org/bot"+@API+"/sendMessage?chat_id="+@CHANNEL+"&text="
+        @LINK = "https://api.telegram.org/bot"+ENV["TELEGRAM_BOT_API"]+"/sendMessage?chat_id="+ENV["CHANNEL"]+"&text="
         
         m = "#Totale "+ User.sum(:total).to_s
         m += "\n"
