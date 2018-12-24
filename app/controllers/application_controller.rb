@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def totale_prestiti
-        User.sum(:total)
+        User.sum(:total).to_d
   end
   
   helper_method :totale_prestiti
