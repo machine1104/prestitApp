@@ -32,6 +32,7 @@ class Transaction < ApplicationRecord
         m += "\n\n#{self.amount.to_s}€ #{self.description} - #{User.find(self.user_id).name}"
         url = URI.parse(URI.encode(@LINK+m))
         res = HTTP.get(url).to_s
+        
     end
     
     def update_destroy
@@ -39,7 +40,7 @@ class Transaction < ApplicationRecord
         user.total = '%.2f' % (user.total - self.amount)
         user.save
         
-        @API = "629726812:AAHC5UyTBd6sd2rLE5qYF_FsAOSUS_Fwc7s"
+        @API = ENV["TELEGRAM_BOT_API"]
         @CHANNEL = "-1001003952543"
         @LINK = "https://api.telegram.org/bot"+@API+"/sendMessage?chat_id="+@CHANNEL+"&text="
         

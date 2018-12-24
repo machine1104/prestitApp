@@ -5,7 +5,6 @@ gem 'puma'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem "http"
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use SCSS for stylesheets
