@@ -20,7 +20,7 @@ class Transaction < ApplicationRecord
         user.save
         
         @API = "629726812:AAHC5UyTBd6sd2rLE5qYF_FsAOSUS_Fwc7s"
-        @CHANNEL = "-1001494343697"
+        @CHANNEL = "-1001003952543"
         @LINK = "https://api.telegram.org/bot"+@API+"/sendMessage?chat_id="+@CHANNEL+"&text="
         
         m = "#Totale "+ User.sum(:total).to_s
@@ -40,7 +40,7 @@ class Transaction < ApplicationRecord
         user.save
         
         @API = "629726812:AAHC5UyTBd6sd2rLE5qYF_FsAOSUS_Fwc7s"
-        @CHANNEL = "-1001494343697"
+        @CHANNEL = "-1001003952543"
         @LINK = "https://api.telegram.org/bot"+@API+"/sendMessage?chat_id="+@CHANNEL+"&text="
         
         m = "#Totale "+ User.sum(:total).to_s
