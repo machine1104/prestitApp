@@ -22,12 +22,12 @@ class Transaction < ApplicationRecord
         @CHANNEL = "-1001494343697"
         @LINK = "https://api.telegram.org/bot"+@API+"/sendMessage?chat_id="+@CHANNEL+"&text="
         
-        m = "#Totale "+ User.sum(:total)
+        m = "#Totale "+ User.sum(:total).to_s
         User.all.each do |u|
-          m += "\n#Prestiti#{u.name} #{u.total}€"
+          m += "\n#Prestiti#{u.name} #{u.total.to_s}€"
         end
         
-        m += "\n#{self.amount}€ #{self.description} #{User.find(self.user_id).name}"
+        m += "\n#{self.amount.to_s}€ #{self.description} #{User.find(self.user_id).name}"
         url = URI.parse(URI.encode(@LINK+m))
         res = HTTP.get(url).to_s
     end
