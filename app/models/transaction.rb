@@ -16,7 +16,7 @@ class Transaction < ApplicationRecord
     
     def update_save
         user = User.find(self.user_id)
-        user.total = (user.total + self.amount).to_d
+        user.total = '%.2f' % (user.total + self.amount)
         user.save
         
         @API = "629726812:AAHC5UyTBd6sd2rLE5qYF_FsAOSUS_Fwc7s"
@@ -36,7 +36,7 @@ class Transaction < ApplicationRecord
     
     def update_destroy
         user = User.find(self.user_id)
-        user.total = (user.total - self.amount).to_d
+        user.total = '%.2f' % (user.total - self.amount)
         user.save
         
         @API = "629726812:AAHC5UyTBd6sd2rLE5qYF_FsAOSUS_Fwc7s"
