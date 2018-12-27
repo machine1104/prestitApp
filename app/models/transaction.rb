@@ -10,7 +10,8 @@ class Transaction < ApplicationRecord
     
     validates :user_id, presence: true
     validates :description, presence: true
-    validates :amount, presence: true
+    validates :amount, presence: true, numericality: { only_float: true }
+    
     
     protected
     
@@ -18,7 +19,7 @@ class Transaction < ApplicationRecord
         user = User.find(self.user_id)
         user.total = '%.2f' % (user.total + self.amount)
         user.save
-
+        
         @LINK = "https://api.telegram.org/bot"+ENV["TELEGRAM_BOT_API"]+"/sendMessage?chat_id="+ENV["CHANNEL"]+"&text="
         
         m = "#Totale "+ User.sum(:total).to_s

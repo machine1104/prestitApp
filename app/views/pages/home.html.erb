@@ -5,7 +5,10 @@
     <ul>
         <% User.all.each do |user| %>
             <div class="li-element">
-                <%= user.name %>: <%= user.total %> €
+                <% if (user.total) != 0 %>
+                    <%= user.name %>: <%= user.total %> €
+                <% end %>
+                
             </div>
         <% end %>
     </ul>
