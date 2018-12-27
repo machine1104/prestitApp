@@ -9,14 +9,15 @@
         <% @transactions.each do |transaction| %>
             <%= link_to "X", transaction_path(transaction.id) , class:"button-text btn btn-outline-danger my-2 my-sm-0", method: :delete, data: { confirm: 'Confermi?' }  %>
             <a class="li-element">
+                <%= transaction.amount %> €
+            </a> -
+            <a class="li-element">
                 <%= User.find(transaction.user_id).name %>
             </a> - 
             <a class="li-element">
                 <%= transaction.description %>
-            </a> -
-            <a class="li-element">
-                <%= transaction.amount %> €
-            </a><br>
+            </a>
+            <br>
         <% end %>
     <%= will_paginate %>
 </div>

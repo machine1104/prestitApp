@@ -28,7 +28,7 @@ class Transaction < ApplicationRecord
           m += "\n#Prestiti#{u.name} #{u.total.to_s}€"
         end
         
-        m += "\n\n#{self.amount.to_s}€ #{self.description} - #{User.find(self.user_id).name}"
+        m += "\n\n#{self.amount.to_s}€ - #{self.description} - #{User.find(self.user_id).name}"
         url = URI.parse(URI.encode(@LINK+m))
         res = HTTP.get(url).to_s
         
@@ -47,7 +47,7 @@ class Transaction < ApplicationRecord
           m += "\n#Prestiti#{u.name} #{u.total.to_s}€"
         end
         
-        m += "\n\nTransazione eliminata: #{self.amount.to_s}€ #{self.description} - #{User.find(self.user_id).name}"
+        m += "\n\nTransazione eliminata: #{self.amount.to_s}€ - #{self.description} - #{User.find(self.user_id).name}"
         url = URI.parse(URI.encode(@LINK+m))
         res = HTTP.get(url).to_s
         
