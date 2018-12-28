@@ -24,8 +24,11 @@ class Transaction < ApplicationRecord
         
         m = "#Totale "+ User.sum(:total).to_s
         m += "\n"
+        
         User.all.each do |u|
-          m += "\n#Prestiti#{u.name} #{u.total.to_s}€"
+            if u.amount != 0
+                m += "\n#Prestiti#{u.name} #{u.total.to_s}€"
+            end
         end
         
         m += "\n\n#{self.amount.to_s}€ - #{self.description} - #{User.find(self.user_id).name}"
@@ -44,7 +47,9 @@ class Transaction < ApplicationRecord
         m = "#Totale "+ User.sum(:total).to_s
         m += "\n"
         User.all.each do |u|
-          m += "\n#Prestiti#{u.name} #{u.total.to_s}€"
+            if u.amount != 0
+                m += "\n#Prestiti#{u.name} #{u.total.to_s}€"
+            end
         end
         
         m += "\n\nTransazione eliminata: #{self.amount.to_s}€ - #{self.description} - #{User.find(self.user_id).name}"
