@@ -22,11 +22,12 @@ class Transaction < ApplicationRecord
         
         @LINK = "https://api.telegram.org/bot"+ENV["TELEGRAM_BOT_API"]+"/sendMessage?chat_id="+ENV["CHANNEL"]+"&text="
         
+        
         m = "#Totale "+ User.sum(:total).to_s
         m += "\n"
         
         User.all.each do |u|
-            if u.amount != 0
+            if u.total != 0
                 m += "\n#Prestiti#{u.name} #{u.total.to_s}€"
             end
         end
@@ -47,7 +48,7 @@ class Transaction < ApplicationRecord
         m = "#Totale "+ User.sum(:total).to_s
         m += "\n"
         User.all.each do |u|
-            if u.amount != 0
+            if u.total != 0
                 m += "\n#Prestiti#{u.name} #{u.total.to_s}€"
             end
         end
